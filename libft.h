@@ -12,8 +12,8 @@ typedef struct s_list
     size_t          content_size;    // Tamanho do conteúdo
     struct s_list   *next;           // Ponteiro para o próximo nó
 }                   t_list;
-
-// Protótipos das funções de manipulação de memória
+// part1
+// memória
 void    *ft_memset(void *b, int c, size_t len); // Preenche a memória com um valor específico
 void    ft_bzero(void *s, size_t n); // Zera a memória
 void    *ft_memcpy(void *dst, const void *src, size_t n); // Copia memória de um lugar para outro
@@ -21,8 +21,7 @@ void    *ft_memccpy(void *dst, const void *src, int c, size_t n); // Copia até 
 void    *ft_memmove(void *dst, const void *src, size_t len); // Move memória (cuidado com sobreposição)
 void    *ft_memchr(const void *s, int c, size_t n); // Encontra um caractere na memória
 int     ft_memcmp(const void *s1, const void *s2, size_t n); // Compara duas áreas de memória
-
-// Protótipos das funções de manipulação de strings
+// string
 size_t  ft_strlen(const char *s); // Retorna o comprimento da string
 char    *ft_strdup(const char *s1); // Duplicata uma string
 char    *ft_strcpy(char *dst, const char *src); // Copia uma string
@@ -33,12 +32,11 @@ size_t  ft_strlcat(char *dst, const char *src, size_t size); // Concatena e limi
 char    *ft_strchr(const char *s, int c); // Encontra um caractere em uma string
 char    *ft_strrchr(const char *s, int c); // Encontra o último caractere em uma string
 char    *ft_strstr(const char *haystack, const char *needle); // Encontra uma substring
-char    *ft_strnstr(const char *haystack, const char *needle, size_t len); // Encontra uma substring até n caracteres
+char    *ft_strnstr(const char *haystack, const char *needle, size_t n); // Encontra uma substring até n caracteres
 int     ft_strcmp(const char *s1, const char *s2); // Compara duas strings
 int     ft_strncmp(const char *s1, const char *s2, size_t n); // Compara até n caracteres
 int     ft_atoi(const char *str); // Converte uma string para um inteiro
-
-// Protótipos das funções de verificação de caracteres
+//caracteres
 int     ft_isalpha(int c); // Verifica se é letra
 int     ft_isdigit(int c); // Verifica se é dígito
 int     ft_isalnum(int c); // Verifica se é alfanumérico
@@ -46,8 +44,7 @@ int     ft_isascii(int c); // Verifica se é caractere ASCII
 int     ft_isprint(int c); // Verifica se é caractere imprimível
 int     ft_toupper(int c); // Converte para maiúscula
 int     ft_tolower(int c); // Converte para minúscula
-
-// Protótipos das funções adicionais
+// part2
 void    *ft_memalloc(size_t size); // Aloca memória e inicializa com 0
 void    ft_memdel(void **ap); // Libera memória e define o ponteiro como NULL
 char    *ft_strnew(size_t size); // Cria uma nova string inicializada com 0
@@ -72,8 +69,7 @@ void    ft_putchar_fd(char c, int fd); // Imprime caractere em fd
 void    ft_putstr_fd(const char *s, int fd); // Imprime string em fd
 void    ft_putendl_fd(const char *s, int fd); // Imprime string com nova linha em fd
 void    ft_putnbr_fd(int n, int fd); // Imprime número em fd
-
-// Protótipos das funções de manipulação de listas
+// bonus - lista
 t_list  *ft_lstnew(void const *content, size_t content_size); // Cria novo nó
 void    ft_lstdelone(t_list **alst, void (*del)(void *, size_t)); // Libera nó
 void    ft_lstdel(t_list **alst, void (*del)(void *, size_t)); // Libera lista
