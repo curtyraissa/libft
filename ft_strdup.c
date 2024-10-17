@@ -6,7 +6,9 @@ char *ft_strdup(const char *s1)
 	size_t	len;
 	size_t	i;
 
-	len = ft_strlen(s1);
+	len = 0;
+	while(s1[len])
+		len++;
 	dup = (char *)malloc(len + 1);
 	if (!dup)
 		return (NULL);
@@ -19,9 +21,11 @@ char *ft_strdup(const char *s1)
 	return (dup);
 }
 
+/*
 #include <stdio.h>
 int	main(void)
 {
 	printf("%s\n", ft_strdup("Hello, 42!"));
 	return (0);
 }
+*/
