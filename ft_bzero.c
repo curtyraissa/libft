@@ -10,4 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_bzero(void *s, size_t n);
+#include "libft.h"
+
+void ft_bzero(void *s, size_t n)
+{
+	unsigned char *ptr;
+
+	ptr = s;
+    while (n--)
+    {
+        *ptr++ = '\0';
+    }
+}
+
+/*
+#include <stdio.h>
+#include <strings.h>
+int main(void)
+{
+    char buffer[10] = "Hello";
+
+    // Zera os primeiros 5 bytes do buffer
+    bzero(buffer, 5);
+    // Mostra o conteúdo
+    for (int i = 0; i < 10; i++)
+    {
+        if (buffer[i] == '\0')
+            printf("\\0 ");
+        else
+            printf("%c ", buffer[i]);
+    }
+	printf("\n");
+    return (0);
+}
+*/
