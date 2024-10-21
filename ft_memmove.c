@@ -6,16 +6,16 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 16:49:47 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/18 16:49:49 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/21 12:32:49 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *d;
-	const unsigned char *s;
+	unsigned char		*d;
+	const unsigned char	*s;
 
 	d = (unsigned char *)dst;
 	s = (const unsigned char *)src;
@@ -23,7 +23,7 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (len--)
 		{
-			d[len] = s[len];  // Copia o último byte primeiro
+			d[len] = s[len];
 		}
 	}
 	else
