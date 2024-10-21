@@ -6,7 +6,7 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:23:05 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/18 14:31:01 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/21 18:23:59 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*ft_strdup(const char *s1)
 	dup = (char *)malloc(len + 1);
 	if (!dup)
 		return (NULL);
+	i = 0;
 	while (i < len)
 	{
 		dup[i] = s1[i];
