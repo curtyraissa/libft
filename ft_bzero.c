@@ -6,35 +6,38 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 16:47:34 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/21 12:18:25 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/21 16:04:43 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*ptr;
-	size_t			i;
 
-	ptr = (unsigned char *)b;
-	i = 0;
-	while (i < len)
+	ptr = s;
+	while (n--)
 	{
-		ptr[i] = (unsigned char)c;
-		i++;
+		*ptr++ = '\0';
 	}
-	return (b);
 }
 
 /*
 #include <stdio.h>
-#include <string.h>
+#include <strings.h>
 int main(void)
 {
-    char str[50] = "Hello, world!";
-    memset(str, 'A', 5);
-    printf("%s\n", str);
+    char buffer[10] = "Hello";
+    bzero(buffer, 5);
+    for (int i = 0; i < 10; i++)
+    {
+        if (buffer[i] == '\0')
+            printf("\\0 ");
+        else
+            printf("%c ", buffer[i]);
+    }
+	printf("\n");
     return (0);
 }
 */
