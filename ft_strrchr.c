@@ -6,7 +6,7 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:25:45 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/18 14:56:47 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/22 18:01:48 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ char	*ft_strrchr(const char *s, int c)
 
 	while (*s)
 	{
-		if (*s == (char)c)
+		if (*s == (unsigned char)c)
 			last_occurrence = s;
 		s++;
 	}
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 		return ((char *)s);
 	return ((char *)last_occurrence);
 }
