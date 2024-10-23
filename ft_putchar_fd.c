@@ -6,8 +6,21 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 15:43:31 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/22 15:43:34 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/22 16:02:03 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_putchar_fd(char c, int fd);
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
+/*
+int main(void)
+{
+	ft_putchar_fd('A', 1);
+	return (0);
+}
+*/
