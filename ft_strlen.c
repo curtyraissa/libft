@@ -6,7 +6,7 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:24:20 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/18 14:49:58 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/24 15:17:39 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	len;
 
+	if (s == NULL)
+		return (0);
 	len = 0;
 	while (s[len])
 		len++;
@@ -26,7 +28,7 @@ size_t	ft_strlen(const char *s)
 #include <stdio.h>
 int	main(void)
 {
-	 printf("%zu\n", ft_strlen("Hello"));
+	 printf("%zu\n", ft_strlen("hello"));
 	 return (0);
 }
 */

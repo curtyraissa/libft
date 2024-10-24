@@ -6,7 +6,7 @@
 #    By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/18 14:52:44 by rcurty-g          #+#    #+#              #
-#    Updated: 2024/10/18 14:53:53 by rcurty-g         ###   ########.fr        #
+#    Updated: 2024/10/21 18:16:38 by rcurty-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,16 +22,20 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	   ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	   ft_putnbr_fd.c
 OBJS = $(SRCS:.c=.o)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 $(NAME): $(OBJS)
-		ar rcs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 all: $(NAME)
 
 clean:
-		rm -f $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-		rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 16:49:03 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/21 12:28:29 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/24 15:17:10 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	const unsigned char	*ptr;
 	size_t				i;
 
+	if (!s)
+		return (NULL);
 	ptr = (const unsigned char *)s;
 	i = 0;
 	while (i < n)

@@ -6,7 +6,7 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:23:29 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/22 17:59:53 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/24 14:59:32 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	if (!s)
+		return (NULL);
 	while (*s != '\0')
 	{
 		if (*s == (unsigned char)c)
@@ -33,6 +35,7 @@ int main(void)
     printf("Result: %s\n", ft_strchr(s, '4'));
     printf("Result: %s\n", ft_strchr(s, 'z'));   //NULL
     printf("Result: %s\n", ft_strchr(s, '\0'));  //final
+    printf("Result: %s\n", ft_strchr(NULL, '4'));
     return (0);
 }
 */

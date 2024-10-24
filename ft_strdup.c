@@ -6,7 +6,7 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:23:05 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/21 18:23:59 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/24 15:14:23 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s1)
 	size_t	len;
 	size_t	i;
 
+	if (!s1)
+		return (NULL);
 	len = 0;
 	while (s1[len])
 		len++;
