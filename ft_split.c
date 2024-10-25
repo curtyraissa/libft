@@ -6,84 +6,90 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 14:40:11 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/22 18:42:30 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/24 16:02:20 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	word_count(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
-	int	count;
-	int	in_word;
+	int	i;
+	int	words;
 
-	count = 0;
-	in_word = 0;
-	while (*s)
-	{
-		if (*s != c && !in_word)
-		{
-			in_word = 1;
-			count++;
-		}
-		else if (*s == c)
-			in_word = 0;
-		s++;
-	}
-	return (count);
-}
-
-static char	*word_dup(const char *s, int start, int end)
-{
-	char	*word;
-	int		i;
-
-	word = (char *)malloc(sizeof(char) * (end - start + 1));
-	if (!word)
-		return (NULL);
 	i = 0;
-	while (start < end)
-		word[i++] = s[start++];
-	word[i] = '\0';
-	return (word);
-}
-
-static void	free_memory(char **result, int j)
-{
-	while (j > 0)
-		free(result[--j]);
-	free(result);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**result;
-	int		i;
-	int		j;
-	int		start;
-
-	result = (char **)malloc(sizeof(char *) * (word_count(s, c) + 1));
-	if (!s || !result)
-		return (NULL);
-	i = 0;
-	j = 0;
+	words = 0;
 	while (s[i])
 	{
 		if (s[i] != c)
 		{
-			start = i;
-			while (s[i] && s[i] != c)
+			words++;
+			while (s[i] != c && s[i])
 				i++;
-			result[j] = word_dup(s, start, i);
-			if (!result[j])
-				return (free_memory(result, j), NULL);
-			j++;
 		}
 		else
 			i++;
 	}
-	result[j] = NULL;
-	return (result);
+	return (words);
+}
+
+static int	get_substring_length(char const *s, char c, int i)
+{
+	int	len;
+
+	len = 0;
+	while (s[i] != c && s[i])
+	{
+		i++;
+		len++;
+	}
+	return (len);
+}
+
+static void	free_memory(char **arr, int j)
+{
+	while (--j >= 0)
+		free(arr[j]);
+	free(arr);
+}
+
+static char	*extract_substring(char const *s, int i, char c)
+{
+	char	*substring;
+	int		substring_len;
+
+	substring_len = get_substring_length(s, c, i);
+	substring = ft_substr(s, i, substring_len);
+	return (substring);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		words;
+	int		i;
+	int		j;
+	char	**arr;
+
+	if (!s)
+		return (NULL);
+	words = count_words(s, c);
+	arr = (char **)malloc((words + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (j < words)
+	{
+		while (s[i] == c)
+			i++;
+		arr[j] = extract_substring(s, i, c);
+		if (!arr[j])
+			return (free_memory(arr, j), NULL);
+		i += get_substring_length(s, c, i);
+		j++;
+	}
+	arr[j] = NULL;
+	return (arr);
 }
 
 /*
