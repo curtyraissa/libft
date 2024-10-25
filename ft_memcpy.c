@@ -6,7 +6,7 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 16:49:30 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/21 12:30:52 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/25 12:01:34 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;
 
+	if (!dst && !src)
+		return (NULL);
 	i = 0;
 	while (i < n)
 	{

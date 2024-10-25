@@ -6,7 +6,7 @@
 /*   By: rcurty-g <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:23:29 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/10/24 14:59:32 by rcurty-g         ###   ########.fr       */
+/*   Updated: 2024/10/25 11:54:07 by rcurty-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (NULL);
 	while (*s != '\0')
 	{
 		if (*s == (unsigned char)c)
