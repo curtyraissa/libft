@@ -6,7 +6,7 @@
 /*   By: raissacurty <raissacurty@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 14:26:11 by rcurty-g          #+#    #+#             */
-/*   Updated: 2024/12/14 23:31:22 by raissacurty      ###   ########.fr       */
+/*   Updated: 2024/12/16 16:38:39 by raissacurty      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stddef.h> //size_t
+
+# include "ft_printf/ft_printf.h"
+# include "get_next_line/get_next_line.h"
 
 typedef struct s_list
 {
